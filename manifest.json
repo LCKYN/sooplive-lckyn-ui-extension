@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "SOOPLive Lckyn UI",
+    "version": "1.0",
+    "description": "A Chrome extension for SOOPLive.",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.sooplive.com/*"
+            ],
+            "js": [
+                "combinedAdjustments.js",
+                "changeColorName.js",
+                "addElements.js"
+            ]
+        }
+    ]
+}
