@@ -25,7 +25,7 @@ function hashCode(str) {
 function applyStyles(elements) {
     elements.forEach(element => {
         const text = element.textContent.trim();
-        const colorIndex = Math.abs(hashCode(text)) % colorSet.length;
+        const colorIndex = Math.abs(hashCode(text) + 1) % colorSet.length;
         const color = colorSet[colorIndex];
         element.style.setProperty('color', color, 'important');
 
